@@ -1,0 +1,14 @@
+{% extends "embeds/base.html" %}
+
+{% block content %}
+
+    <h2>{{ embed.title }}</h2>
+    <div class="video-container">
+        <iframe
+        src="{{ embed.event_url }}/embed"
+        frameborder="0"
+        allowfullscreen
+        ></iframe>
+    </div>
+    
+{% endblock %}
