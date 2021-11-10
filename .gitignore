@@ -1,0 +1,11 @@
+# Environment variables
+.env
+
+# Text backup files
+*.bak
+
+# Database
+*.sqlite3
+
+# pycache
+__pycache__
