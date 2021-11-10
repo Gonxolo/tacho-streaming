@@ -9,3 +9,6 @@
 
 # pycache
 __pycache__
+
+# Secrets
+secrets.json
