@@ -1,0 +1,34 @@
+{% extends "embeds/base.html" %}
+
+{% block content %}
+    {% if embed_list %}
+    <table class="centered highlight responsive-table">
+        <tr>
+            <th>Titulo</th>
+            <th>Embed URL</th>
+            <th>Fecha Creacion</th>
+            <th>Creado por</th>
+            <th>Ultima Modificacion</th>
+            <th>Modificado por</th>
+            <th>Plataforma</th>
+            <th>Transmicion</th>
+        </tr>
+        {% for item in embed_list %}
+        <tr> 
+            <td>{{ item.title }}</td>
+            <td>{{ item.event_url }}</td>
+            <td>{{ item.creation_date }}</td>
+            <td>{{ item.created_by }}</td>
+            <td>{{ item.last_modification }}</td>
+            <td>{{ item.last_modification_by }}</td>
+            <td>{{ item.platform }}</td>
+            <td><a href="{% url 'embeds:detail' item.id %}">Ir a la transmicion</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No embeds are available.</p>
+
+    {% endif %}
+{% endblock %}
+
