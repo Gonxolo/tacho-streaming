@@ -23,13 +23,17 @@ def signup(request):
     return render(request, 'embeds/signup.html', {'form': f})
 
 def index(request):
-    last_embed = Embed.objects.order_by('-creation_date')[0]
-    latest_embed_list = Embed.objects.order_by('-creation_date')[1:6]
-    context = {
-        'last_embed': last_embed,
-        'latest_embed_list': latest_embed_list,
-    }
-    return render(request, 'embeds/index.html', context)
+    
+    try:
+        last_embed = Embed.objects.order_by('-creation_date')[0]
+        latest_embed_list = Embed.objects.order_by('-creation_date')[1:6]
+        context = {
+            'last_embed': last_embed,
+            'latest_embed_list': latest_embed_list,
+        }
+        return render(request, 'embeds/index.html', context)
+    except IndexError:
+        return Http404(request, 'There are no embeds')
 
 def detail(request, embed_id):
     embed = get_object_or_404(Embed, pk=embed_id)
