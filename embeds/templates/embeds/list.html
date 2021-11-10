@@ -11,7 +11,7 @@
             <th>Ultima Modificacion</th>
             <th>Modificado por</th>
             <th>Plataforma</th>
-            <th>Transmicion</th>
+            <th>Transmision</th>
         </tr>
         {% for item in embed_list %}
         <tr> 
@@ -22,7 +22,7 @@
             <td>{{ item.last_modification }}</td>
             <td>{{ item.last_modification_by }}</td>
             <td>{{ item.platform }}</td>
-            <td><a href="{% url 'embeds:detail' item.id %}">Ir a la transmicion</a></td>
+            <td><a href="{% url 'embeds:detail' item.id %}">Ir a la transmision</a></td>
         </tr>
         {% endfor %}
     </table>
