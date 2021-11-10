@@ -33,7 +33,7 @@ def index(request):
         }
         return render(request, 'embeds/index.html', context)
     except IndexError:
-        return Http404(request, 'There are no embeds')
+        raise Http404('There are no embeds')
 
 def detail(request, embed_id):
     embed = get_object_or_404(Embed, pk=embed_id)
