@@ -23,7 +23,7 @@ class Embed(models.Model):
 
 class Modification(models.Model):
     previous_title = models.ForeignKey(Embed, on_delete=CASCADE, related_name='previous_name', null=True)
-    new_title = CharField(max_length=200, default="Evento Sin Nombre " + str(datetime.datetime.now()))
+    new_title = CharField(max_length=200, default="Evento Sin Nombre")
     previous_url = URLField(max_length=200)
     new_url = URLField(max_length=200)
     modified_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=CASCADE, related_name='editor')
