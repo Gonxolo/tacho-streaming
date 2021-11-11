@@ -1,2 +1,2 @@
 # tacho-streaming
-Platform to embed videos, so they can later be used in streaming.
+Website built for embedding and storing videos and live events so they can later be used on streaming. (Work in Progress)
